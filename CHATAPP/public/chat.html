@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
     <!-- FONT AWESOME -->
     <link
       rel="stylesheet"
@@ -13,7 +17,7 @@
     />
     <!-- CSS LAYOUT -->
     <link rel="stylesheet" href="./css/layout.css" />
-    
+
     <title>CHAT ROOM</title>
   </head>
   <body>
@@ -35,16 +39,18 @@
         </div>
         <div class="chat-messages"></div>
       </main>
-      <div class="chat-form">
-        <form id="chat-form">
-          <input
+      <div class="chat-form" >
+        <form id="chat-form" >
+          <!-- <input
             type="text"
             id="msg"
             placeholder="Enter Message"
             required
             autocomplete="off"
-          />
-          <button class="btn"><i class="fa fa-location-arrow"></i>Send</button>
+          /> -->
+          <input  data-emoji-picker="true" type="text"  id="msg" required placeholder="Enter Message" autocomplete="off">
+
+          <button  class="btn"><i class="fa fa-location-arrow"></i>Send</button>
         </form>
       </div>
     </div>
@@ -56,9 +62,12 @@
     ></script>
     <script src="./socket.io/socket.io.js"></script>
     <script src="js/main.js"></script>
-    <script
-      type="text/javascript"
-      src="{{ asset('/js/emojionearea.min.js') }}"
-    ></script>
+    <!-- //Emoji -->
+    <script src="./js/emoji.js"></script>
+    <script>
+      (() => {
+        new EmojiPicker();
+      })();
+    </script>
   </body>
 </html>

@@ -186,6 +186,7 @@ body {
   padding: 5px;
   height: 40px;
   flex: 1;
+  
 }
 .chat-messages .message .meta span {
   color: #777;
@@ -197,3 +198,5 @@ body {
 .message {
   background-color: rgb(248, 114, 42);
 }
+
+/* Emoji */
